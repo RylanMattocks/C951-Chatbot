@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    
+    <!--Begin Interaction-->
+    
+	<category>
+	    <pattern>*</pattern>
+        <template>Hello, type "start" to begin.</template>
+	</category>
+	
+	<!--Confirm Student is here for career guidance-->
+	
+	<category>
+	    <pattern>START</pattern>
+	    <template>
+	        Are you here for Computer Science Job Recommendations?
+	    
+	        <button>
+	            <text>Yes</text>
+	            <postback>CAREERS OR SURVEYS</postback>
+            </button>
+        
+            <button>
+                <text>No</text>
+                <postback>NOT A STUDENT</postback>
+            </button>
+        </template>
+        
+	</category>
+	
+	<!--Error if not here for computer science career guidance-->
+	
+	<category>
+	    <pattern>NOT A STUDENT</pattern>
+	    <template>I can only help with Computer Science Job Recommendations. Sorry!</template>
+	</category>
+	
+	<!--Options for career guidance-->
+	
+	<category>
+	    <pattern>CAREERS OR SURVEYS</pattern>
+	    <template>
+	        Would you like to take our survey to view our recommendations or view our top 5 picks?
+	        
+	        <button>
+	            <text>Take Survey</text>
+	            <postback>SURVEY</postback>
+	        </button>
+	        <button>
+	            <text>View Careers</text>
+	            <postback>CAREERS</postback>
+	        </button>
+	    </template>
+	</category>
+	
+	<!--Survey for student to select job-->
+	
+	
+	<!--Design or Analyze-->
+	
+	<category>
+	    <pattern>SURVEY</pattern>
+	    <template>
+	        Please answer the following questions. <br />
+	        Do you prefer designing or analyzing?
+	        
+	        <button>
+	            <text>Design</text>
+	            <postback>DESIGN</postback>
+	        </button>
+	        
+	        <button>
+	            <text>Analyze</text>
+	            <postback>ANALYZE</postback>
+	        </button>
+	        
+	    </template>
+	</category>
+	
+	<!--Analyze Path-->
+	
+	
+	<!--Problem solving or communication-->
+	
+	<category>
+	    <pattern>ANALYZE</pattern>
+	    <template>
+	        Do you have stronger problem-solving skills or communication skills?
+	        
+	        <button>
+	            <text>Problem-Solving</text>
+	            <postback>PROBLEMSOLVING</postback>
+	        </button>
+	        
+	        <button>
+	            <text>Communication</text>
+	            <postback>COMMUNICATION</postback>
+	        </button>
+	    </template>
+	</category>
+	
+	<!--Design Path-->
+	
+	
+	<!--Programming skills yes/no-->
+	
+	<category>
+	    <pattern>DESIGN</pattern>
+	    <template>
+	        Are you good at programming?
+	        
+	        <button>
+	            <text>Yes</text>
+	            <postback>PROGRAMMING</postback>
+	        </button>
+	        
+	        <button>
+	            <text>No</text>
+	            <postback>OTHER</postback>
+	        </button>
+	    </template>
+	</category>
+	
+	<!--Hardware or software-->
+	
+	<category>
+	    <pattern>OTHER</pattern>
+	    <template>
+	        Do you prefer creating hardware or software?
+	        
+	        <button>
+	            <text>Hardware</text>
+	            <postback>HARDWARE</postback>
+	        </button>
+	        
+	        <button>
+	            <text>Software</text>
+	            <postback>SOFTWARE</postback>
+	        </button>
+	    </template>
+	</category>
+	
+	<!--SURVEY DECISIONS-->
+	
+	
+	<!--Hardware = Computer Hardware Engineer-->
+	
+	<category>
+	    <pattern>HARDWARE</pattern>
+	    <template>
+	        We recommend computer hardware engineer! <br />
+	        <srai>COMPUTER HARDWARE ENGINEER</srai>
+	    </template>
+	</category>
+	
+	<!--Software = Information Security Analyst-->
+	
+	<category>
+	    <pattern>SOFTWARE</pattern>
+	    <template>
+	        We recommend information security analyst! <br />
+	        <srai>INFORMATION SECURITY ANALYST</srai>
+	    </template>
+	</category>
+	
+	<!--Programming = Software Developer-->
+	
+	<category>
+	    <pattern>PROGRAMMING</pattern>
+	    <template>
+	        We recommend Software Developer! <br />
+	        <srai>SOFTWARE DEVELOPER</srai>
+	    </template>
+	</category>
+	
+	<!--Problem solving = Database Administrator-->
+	
+	<category>
+	    <pattern>PROBLEMSOLVING</pattern>
+	    <template>
+	        We recommend database administrator! <br />
+	        <srai>DATABASE ADMINISTRATOR</srai>
+	    </template>
+	</category>
+	
+	<!--Communication = Computer Systems Analyst-->
+	
+	<category>
+	    <pattern>COMMUNICATION</pattern>
+	    <template>
+	        We recommend computer systems analyst! <br />
+	        <srai>COMPUTER SYSTEMS ANALYST</srai>
+	    </template>
+	</category>
+	
+	<!--5 careers chosen for students-->
+	
+	<category>
+	    <pattern>CAREERS</pattern>
+	    <template>
+	        Please choose a career you would like to learn more about!
+	        
+	        <button>
+	            <text>Software Developer</text>
+	            <postback>SOFTWARE DEVELOPER</postback>
+	        </button>
+	        
+	        <button>
+	            <text>Computer Hardware Engineer</text>
+	            <postback>COMPUTER HARDWARE ENGINEER</postback>
+	        </button>
+	        
+	        <button>
+	            <text>Information Security Analyst</text>
+	            <postback>INFORMATION SECURITY ANALYST</postback>
+	        </button>
+	        
+	        <button>
+	            <text>Computer Systems Analyst</text>
+	            <postback>COMPUTER SYSTEMS ANALYST</postback>
+	        </button>
+	        
+	        <button>
+	            <text>Database Administrator</text>
+	            <postback>DATABASE ADMINISTRATOR</postback>
+	        </button>
+	        
+	    </template>
+	</category>
+	
+	<!--Info on Software Developer-->
+	
+	<category>
+	    <pattern>SOFTWARE DEVELOPER</pattern>
+	    <template>
+	        Software Developers create programs that allow users to perform tasks on various devices. 
+	        They must have problem-solving skills and be fluent in the coding language used in the program.
+	        For more detailed information, please visit:
+	        <link>
+	            <text>https://www.thebalancecareers.com/software-developer-job-description-salary-and-skills-2061833</text>
+	            <url>https://www.thebalancecareers.com/software-developer-job-description-salary-and-skills-2061833</url>
+	        </link>
+	        
+	        <button>
+	            <text>View Careers</text>
+	            <postback>CAREERS</postback>
+	        </button>
+	        
+	        <button>
+	            <text>Take our Survey</text>
+	            <postback>SURVEY</postback>
+	        </button>
+	    </template>
+	</category>
+	
+	<!--Info on Computer Hardware Engineer-->
+	
+	<category>
+	    <pattern>COMPUTER HARDWARE ENGINEER</pattern>
+	    <template>
+	        Computer hardware engineers design, develop and test computer components such as circuit boards. 
+	        They must have technical expertise and creativity; 
+	        as well as the ability to perform comprehensive system tests repeatedly.
+	        For more detailed information, please visit:
+	        <link>
+	            <text>https://www.thebalancecareers.com/computer-hardware-engineer-525999</text>
+	            <url>https://www.thebalancecareers.com/computer-hardware-engineer-525999</url>
+	        </link>
+	        
+	        <button>
+	            <text>View Careers</text>
+	            <postback>CAREERS</postback>
+	        </button>
+	        
+	        <button>
+	            <text>Take our Survey</text>
+	            <postback>SURVEY</postback>
+	        </button>
+	    </template>
+	</category>
+	
+	<!--Info on Information Security Analyst-->
+	
+	<category>
+	    <pattern>INFORMATION SECURITY ANALYST</pattern>
+	    <template>
+	        Information security analysts create systems to protect networks and websites from security breaches.
+	        They must have strong problem-solving skills and be able to research data security trends to preclude issues.
+	        For more detailed information, please visit:
+	        <link>
+	            <text>https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm#tab-2</text>
+	            <url>https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm#tab-2</url>
+	        </link>
+	        
+	        <button>
+	            <text>View Careers</text>
+	            <postback>CAREERS</postback>
+	        </button>
+	        
+	        <button>
+	            <text>Take our Survey</text>
+	            <postback>SURVEY</postback>
+	        </button>
+	    </template>
+	</category>
+	
+	<!--Info on Computer Systems Analyst-->
+	
+	<category>
+	    <pattern>COMPUTER SYSTEMS ANALYST</pattern>
+	    <template>
+	        Computer systems analysts assess computer systems and recommend changes to hardware and software.
+	        They must have interpersonal and communication skills. Business skills are also a plus.
+	        For more detailed information, please visit:
+	        <link>
+	            <text>https://www.thebalancecareers.com/computer-systems-analyst-526001</text>
+	            <url>https://www.thebalancecareers.com/computer-systems-analyst-526001</url>
+	        </link>
+	        
+	        <button>
+	            <text>View Careers</text>
+	            <postback>CAREERS</postback>
+	        </button>
+	        
+	        <button>
+	            <text>Take our Survey</text>
+	            <postback>SURVEY</postback>
+	        </button>
+	    </template>
+	</category>
+	
+	<!--Info on Database Administrator-->
+	
+	<category>
+	    <pattern>DATABASE ADMINISTRATOR</pattern>
+	    <template>
+	        Database administrators analyze the data needs of users and improve the resources used to store and retrieve information.
+	        They need problem-solving skills to correct malfunctions and modify systems.
+	        For more detailed information, please visit:
+	        <link>
+	            <text>https://www.thebalancecareers.com/database-administrator-job-description-salary-and-skills-2061775</text>
+	            <url>https://www.thebalancecareers.com/database-administrator-job-description-salary-and-skills-2061775</url>
+	        </link>
+	        
+	        <button>
+	            <text>View Careers</text>
+	            <postback>CAREERS</postback>
+	        </button>
+	        
+	        <button>
+	            <text>Take our Survey</text>
+	            <postback>SURVEY</postback>
+	        </button>
+	    </template>
+	</category>
+	
+	
+	
+</aiml>
